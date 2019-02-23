@@ -11,6 +11,7 @@ void MotorControl::Pivot(int dir, int pwm){
   RightDriver.SetR_MPower(pwm);
   RightDriver.SetL_MPower(pwm);
   Stop();
+  // this is the motor branch
 }
 /*void MotorControl::PivotR(int degree, int pwm){
   RightDriver.initMotors();
