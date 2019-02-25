@@ -1,10 +1,6 @@
 class MotorControl
 {
   public:
-  void Pivot(int dir, int pwm);
-  //void PivotR(int degree);
-  //void TurnL(int degree);
-  //void TurnR(int degree);
-  //void initMotors();
+  void Move(int R_dir, int L_dir, int R_pwm, int L_pwm);
   void Stop();
 };
