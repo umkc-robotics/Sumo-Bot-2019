@@ -1,3 +1,5 @@
+#include "Encoder.h"
+
 int val;
 int encoder0PinA = 3;
 int encoder0PinB = 4;
@@ -5,13 +7,19 @@ int encoder0Pos = 0;
 int encoder0PinALast = LOW;
 int n = LOW;
 
+Encoder enc;
+
 void setup() {
-  pinMode (encoder0PinA, INPUT);
-  pinMode (encoder0PinB, INPUT);
+  //pinMode (encoder0PinA, INPUT);
+  //pinMode (encoder0PinB, INPUT);
+  
+  Encoder(encoder0PinA, encoder0PinB);
   Serial.begin (9600);
 }
 
 void loop() {
+  Serial.print(enc.getCount());
+  /*
   n = digitalRead(encoder0PinA);
   if ((encoder0PinALast == LOW) && (n == HIGH)) {
     if (digitalRead(encoder0PinB) == LOW) {
@@ -23,4 +31,5 @@ void loop() {
     Serial.print ("/");
   }
   encoder0PinALast = n;
+  */
 }
