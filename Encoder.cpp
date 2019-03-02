@@ -1,35 +1,35 @@
-#include "EncoderClass.h"
+#include "Encoder.h"
 
 
-EncoderClass::EncoderClass(int pinA, int pinB) {
+Encoder::Encoder(int pinA, int pinB) {
 	PINA_INTERRUPT = pinA;
 	PINB_CHECKER = pinB;
 	initEncoder();
 }
 
 // initializes encoder pins and count
-void EncoderClass::initEncoder() {
+void Encoder::initEncoder() {
 	pinMode(PINA_INTERRUPT,INPUT);
 	pinMode(PINB_CHECKER,INPUT);
 	resetCount();
 }
 
 // call to get count
-long EncoderClass::getCount() {
+long Encoder::getCount() {
 	return encCount;
 }
 
 // reset encCount to 0
-void EncoderClass::resetCount() {
+void Encoder::resetCount() {
 	encCount = 0;
 }
 
-void EncoderClass::setCount(long newCount) {
+void Encoder::setCount(long newCount) {
 	encCount = newCount;
 }
 
 
-void EncoderClass::checkEncoder() {
+void Encoder::checkEncoder() {
 	if (digitalRead(PINA_INTERRUPT) == digitalRead(PINB_CHECKER)) {
 		incrementCount();
 	}
@@ -38,7 +38,7 @@ void EncoderClass::checkEncoder() {
 	}
 }
 
-void EncoderClass::checkEncoderFlipped() {
+void Encoder::checkEncoderFlipped() {
 	if (digitalRead(PINA_INTERRUPT) == digitalRead(PINB_CHECKER)) {
 		decrementCount();
 	}
@@ -48,11 +48,11 @@ void EncoderClass::checkEncoderFlipped() {
 }
 
 // call to increment count
-void EncoderClass::incrementCount() {
+void Encoder::incrementCount() {
 	encCount++;
 }
 
 // call to decrement count
-void EncoderClass::decrementCount() {
+void Encoder::decrementCount() {
 	encCount--;
 }
