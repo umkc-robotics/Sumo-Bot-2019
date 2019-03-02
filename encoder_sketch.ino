@@ -2,7 +2,7 @@
 
 int val;
 int encoder0PinA = 3;
-int encoder0PinB = 4;
+int encoder0PinB = 2;
 int encoder0Pos = 0;
 int encoder0PinALast = LOW;
 int n = LOW;
