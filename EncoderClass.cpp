@@ -1,35 +1,35 @@
 #include "EncoderClass.h"
 
 
-ScrapEncoder::ScrapEncoder(int pinA, int pinB) {
+EncoderClass::EncoderClass(int pinA, int pinB) {
 	PINA_INTERRUPT = pinA;
 	PINB_CHECKER = pinB;
 	initEncoder();
 }
 
 // initializes encoder pins and count
-void ScrapEncoder::initEncoder() {
+void EncoderClass::initEncoder() {
 	pinMode(PINA_INTERRUPT,INPUT);
 	pinMode(PINB_CHECKER,INPUT);
 	resetCount();
 }
 
 // call to get count
-long ScrapEncoder::getCount() {
+long EncoderClass::getCount() {
 	return encCount;
 }
 
 // reset encCount to 0
-void ScrapEncoder::resetCount() {
+void EncoderClass::resetCount() {
 	encCount = 0;
 }
 
-void ScrapEncoder::setCount(long newCount) {
+void EncoderClass::setCount(long newCount) {
 	encCount = newCount;
 }
 
 
-void ScrapEncoder::checkEncoder() {
+void EncoderClass::checkEncoder() {
 	if (digitalRead(PINA_INTERRUPT) == digitalRead(PINB_CHECKER)) {
 		incrementCount();
 	}
@@ -38,7 +38,7 @@ void ScrapEncoder::checkEncoder() {
 	}
 }
 
-void ScrapEncoder::checkEncoderFlipped() {
+void EncoderClass::checkEncoderFlipped() {
 	if (digitalRead(PINA_INTERRUPT) == digitalRead(PINB_CHECKER)) {
 		decrementCount();
 	}
@@ -48,11 +48,11 @@ void ScrapEncoder::checkEncoderFlipped() {
 }
 
 // call to increment count
-void ScrapEncoder::incrementCount() {
+void EncoderClass::incrementCount() {
 	encCount++;
 }
 
 // call to decrement count
-void ScrapEncoder::decrementCount() {
+void EncoderClass::decrementCount() {
 	encCount--;
 }
