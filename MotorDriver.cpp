@@ -12,24 +12,7 @@
 
 //Beginning at least of functions
 
-void MotorDriver::initMotors(){   //Set up all pins for motors(initiate motors)
-  //pinMode(PwmPinL, OUTPUT);
-  //pinMode(PwmPinR, OUTPUT);
-  pinMode(pwm_RF,OUTPUT);
-  pinMode(pwm_LF,OUTPUT);
-  pinMode(pwm_RB,OUTPUT);
-  pinMode(pwm_LB,OUTPUT);
-  pinMode(dir_RF,OUTPUT);
-  pinMode(dir_LF,OUTPUT);
-  pinMode(dir_RB,OUTPUT);
-  pinMode(dir_LB,OUTPUT);
-  /*                          Remove comments if we are using encoder in this class
-  pinMode(encoder_RF, INPUT);
-  pinMode(encoder_LF, INPUT);
-  pinMode(encoder_RB, INPUT);
-  pinMode(encoder_LB, INPUT);
-  */
-}
+
 void MotorDriver::SetDirection(int Dir, int DirPin){ //Putting 1 or 0 into the direction pin of the specified motor
    digitalWrite(DirPin, Dir);
 }
