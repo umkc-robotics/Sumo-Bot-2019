@@ -1,4 +1,4 @@
-class EncoderClass {
+class Encoder {
 	protected:
 		volatile long encCount;
 		virtual void initEncoder() = 0;
