@@ -1,4 +1,4 @@
-#include "EncoderClass.cpp"
+#include "EncoderClass.h"
 
 
 ScrapEncoder::ScrapEncoder(int pinA, int pinB) {
