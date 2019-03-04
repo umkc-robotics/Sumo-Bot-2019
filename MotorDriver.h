@@ -6,7 +6,7 @@ class MotorDriver
   public:                                   //All Functions in MotorDriver Class
     void SetDirection(int Dir, int DirPin);
     void SetPower(int Pwm,int PwmPin);
-    void SetR_MPower(int All_Pwm);
+    void SetR_MPower(int R_Pwm);
     void SetR_Direction(int Dir);
     void SetL_Direction(int Dir);
     void SetL_MPower(int L_Pwm);
