@@ -8,10 +8,6 @@
 #define dir_RB 29
 #define dir_LF 28
 #define dir_LB 31
-#define encoder_LF A6
-#define encoder_RF A7
-#define encoder_LB A2
-#define encoder_RB A3
 #include "Arduino.h"
 class MotorControl
 {
