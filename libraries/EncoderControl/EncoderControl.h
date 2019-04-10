@@ -1,17 +1,20 @@
-class Encoder{
+#include <Arduino.h>
+
+class EncoderControl {
 
 private:
 	int FL_EncA;
 	int FL_EncB;
 	int encCount = 0;
 public:
-	Encoder(int pinA, int pinB);
-	void initEncoder();
+	EncoderControl();
+	EncoderControl(int pinA, int pinB);
 	// call to increment count
 	void incrementCount();
 
 	// call to decrement count
 	void decrementCount();
+	void checkEncoder();
 
 	// get current count
 	int getCount();
