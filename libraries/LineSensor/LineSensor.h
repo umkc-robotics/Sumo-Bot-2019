@@ -9,11 +9,15 @@ class LineSensor
 		byte pins[4]={2,3,4,5};
 		bool black[4];
 	public:
-		LineSensor(byte[4]);
+		LineSensor();
 		bool CheckState();
-
 		void ReadOneSensor(int);
 		void ReadSensors();
+		void Maneuver();
+
+
+
 };
+
 
 #endif
