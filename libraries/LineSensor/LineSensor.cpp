@@ -1,6 +1,5 @@
 #include <LineSensor.h>
 
-
 LineSensor::LineSensor(const byte[4] _pins);
 {
 	for(int i=0;i<4;i++)
