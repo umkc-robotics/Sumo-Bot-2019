@@ -1,18 +1,17 @@
-#include <LineSensor.h>
+#include "LineSensor.h"
 
-LineSensor::LineSensor(const byte[4] _pins);
+
+LineSensor::LineSensor()
 {
-	for(int i=0;i<4;i++)
-		pins[i]=_pins[i];
 }
 
 bool LineSensor::CheckState()
 {
 	ReadSensors();
 	for(int i=0;i<4;i++)
-		if(black[i]==FALSE)
-			return TRUE;
-	return FALSE;
+		if(black[i]==0)
+			return 1;
+	return 0;
 }
 
 void LineSensor::ReadSensors()
@@ -33,10 +32,13 @@ void LineSensor::ReadOneSensor(int i)
 	//time how long the input is HIGH, but quit after 3ms as nothing happens after that
 	while (digitalRead(pins[i]) == HIGH && micros() - time < 3000);
 	int diff = micros() - time;
-	if (diff<2000)
-		black[i]=FALSE;
+	if (diff>2700)
+		black[i]=1;
 	else
-		black[i]=TRUE;
+		black[i]=0;
 }
 
-
+void Maneuver()
+{
+	//To be implemented
+}
